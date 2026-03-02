@@ -23,6 +23,11 @@ export async function uploadFileForReview(file, language = "auto") {
   return response.data;
 }
 
+export async function reviewGithubRepo(repoUrl) {
+  const response = await api.post("/review/repo", { repo_url: repoUrl });
+  return response.data;
+}
+
 export async function getReview(id) {
   const response = await api.get(`/review/${id}`);
   return response.data;
